@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memories</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-image: url(./bg.jpg);
+            background-size: cover; /* Ensure background covers the entire screen */
+            background-position: center; /* Center the background image */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .heading {
+            font-size: 4rem;
+            margin: 2rem 0;
+            background: var(--secondary-color);
+            text-transform: capitalize;
+            color: var(--primary-color);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bold;
+            text-align: center;
+            letter-spacing: .2rem;
+            text-shadow: 0 .2rem .4rem rgba(0, 0, 0, .4);
+            padding: 1.5rem;
+        }
+
+        /* Video container with grid layout */
+        .video-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;  /* Increased gap for better spacing */
+        }
+
+        .video {
+            
+            position: relative;
+            text-align: center;
+            overflow: hidden;
+            border-radius: 1rem; /* Rounded corners */
+            transition: transform 0.3s ease; /* Smooth transitions */
+        }
+
+        .video video {
+            width: 100%;
+            height: 100%;
+            border-radius: 1rem; /* Match the container's rounded corners */
+            background-color: black;
+            transition: opacity 0.3s ease; /* Smooth opacity transition */
+        }
+
+        .video:hover {
+            transform: scale(1.05); /* Slightly scale up on hover */
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Popup Styling */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .popup-content {
+            background: white;
+            padding: 20px;
+            border-radius: 1rem;
+            width: 300px;
+            text-align: center;
+            font-size: 1.2em;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        #love {
+            color: #ff1493; /* Pink color for emphasis */
+            font-weight: bold;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .heading {
+                font-size: 2em;
+            }
+
+            .video-container {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 20px;
+            }
+
+            .popup-content {
+                width: 80%;
+            }
+        }
+
+        /* Media query for even smaller screens */
+        @media (max-width: 480px) {
+            .heading {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+   <div class="container">
+        <div class="heading">SPECIAL WISHES !</div>
+        <div class="video-container">
+            <div class="video">
+                <video src="./parents.mp4"></video>
+            </div>
+            <div class="video">
+                <video src="./anna.mp4"></video>
+            </div>
+            <div class="video">
+                <video src="./pinky.mp4"></video>
+            </div>
+            <div class="video">
+                <video src="./siri.mp4"></video>
+            </div>
+            <div class="video">
+                <video src="./ashi.mp4"></video>
+            </div>
+            <div class="video">
+                <video src="./abhi.mp4"></video>
+            </div>
+            <div class="video">
+                <video src="./jwala akka.mp4"></video>
+            </div>
+            <div class="video">
+                <video src="./sai kiran anna.mp4"></video>
+            </div>
+            <div class="video">
+                <video src="./veera anna.mp4"></video>
+            </div>
+            <div class="video">
+                <video src="./saleem anna.mp4"></video>
+            </div>
+            <div class="video">
+                <video src="./mix.mp4"></video>
+            </div>
+            <div class="video">
+                <video src="./paru.mp4"></video>
+            </div>
+            <div class="video">
+                <video src="./renu.mp4"></video>
+            </div>
+            <div class="video">
+                <video src="./thrisha.mp4"></video>
+            </div>
+            <div class="video">
+                <video src="./all.mp4"></video>
+            </div>
+        </div>
+    </div> 
+    
+    <!-- Popup Disclaimer -->
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <center><h1 id="dis">DISCLAIMER !!!</h1></center>
+            <p id="love"> THIS PAGE IS FILLED WITH LOVE FOR YOUU</p>
+        </div>
+    </div>
+
+    <script>
+        var videos = document.querySelectorAll('video');
+        
+        videos.forEach((video) => {
+            // Add click event to play/pause video
+            video.addEventListener('click', () => {
+                if (video.paused) {
+                    video.play();
+                } else {
+                    video.pause();
+                }
+            });
+
+            video.addEventListener('ended', () => {
+                video.currentTime = 0; // Reset video to start when it ends
+            });
+        });
+
+        // Popup logic
+        setTimeout(function() {
+            document.getElementById('popup').style.display = 'flex';
+            
+            setTimeout(function() {
+                document.getElementById('popup').style.display = 'none';
+            }, 2500);
+        }, 1000);
+    </script>
+</body>
+</html>

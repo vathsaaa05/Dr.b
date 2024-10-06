@@ -1,0 +1,114 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(./bg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+    
+}
+
+html {
+    font-size: 62.5%;
+}
+
+.container .heading {
+    font-size: 4rem;
+    margin: 2rem 0;
+    background: var(--secondary-color); /* Using the root variable for color */
+    text-transform: capitalize;
+    color: var(--primary-color);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: .2rem;
+    text-shadow: 0 .2rem .4rem rgba(0, 0, 0, .4); /* Softer text-shadow */
+    padding: 1.5rem;
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3rem; /* Added gap for consistency */
+}
+
+.video-container .video {
+    height: 500px;
+    width: 300px;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .5);
+    overflow: hidden;
+    border-radius: 1rem;
+    transition: transform 0.3s ease; /* Smooth transition effect */
+}
+
+.video-container .video1 {
+    height: 370px;
+    width: 600px;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .5);
+    overflow: hidden;
+    border-radius: 1rem;
+    margin: 4rem;
+    transition: transform 0.3s ease;
+}
+
+.video-container .video video,
+.video-container .video1 video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.video-container .video video:hover,
+.video-container .video1 video:hover {
+    transition: transform 0.3s ease;
+    transform: scale(1.2); /* Reduced scaling for better UX */
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8); /* Slightly reduced transparency */
+    z-index: 1000;
+}
+
+.popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 10rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+#dis, #love {
+    color: black;
+    background: var(--secondary-color);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2.4rem;
+}
+
+#dis {
+    color: var(--primary-color); /* Using root variable */
+}
+
+#love {
+    text-align: center;
+}
